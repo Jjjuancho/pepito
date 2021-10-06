@@ -19,6 +19,10 @@ var app = new Framework7({
         path: '/about/',
         url: 'about.html',
       },
+      {
+        path: '/formulario/',
+        url: 'formulario.html',
+      },
     ]
     // ... other parameters
   });
@@ -40,5 +44,4 @@ $$(document).on('page:init', function (e) {
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
     console.log(e);
-    alert('Hello');
 })
