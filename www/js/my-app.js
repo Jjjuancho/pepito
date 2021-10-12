@@ -20,7 +20,7 @@ var app = new Framework7({
       url: 'about.html',
     },
     {
-      path: '/formulario/',
+      path: '/regform/',
       url: 'formulario.html',
     },
   ]
@@ -37,6 +37,11 @@ $$(document).on('deviceready', function () {
 // Option 1. Using one 'page:init' handler for all pages
 $$(document).on('page:init', function (e) {
   // Do something here when page loaded and initialized
+  $$('#rok').on('click', fnReg)
+  function fnLogin() {
+    user = $$('#rmail').val();
+    user = $$('#rpass').val();
+  }
   console.log(e);
 })
 

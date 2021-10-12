@@ -1,5 +1,5 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax.  -->
-<div class="page" data-name="formulario">
+<div class="page" data-name="regform">
     <br> <br> <br>
     <div class="page">
         <div class="navbar">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="page-content" id="pagina">
-                    <form class="list" id="my-form">
+                    <form class="list form-ajax-submit" id="rform">
                         <div class="block-inline text-align-center">Crea tu cuenta</div>
                         <div class="list inline-labels no-hairlines-md">
                             <ul>
@@ -58,7 +58,7 @@
                                                 <i class="icon demo-list-icon"></i>
                                             </div>
                                             <div class="item-inner">
-                                                <div class="item-title item-label">Contraseña</div>
+                                                <div class="item-title item-label" id="rpass">Contraseña</div>
                                                 <div class="item-input-wrap">
                                                     <input type="password" placeholder="Ej: Hola123" />
                                                     <span class="input-clear-button"></span>
@@ -72,7 +72,7 @@
                                                 <i class="icon demo-list-icon"></i>
                                             </div>
                                             <div class="item-inner">
-                                                <div class="item-title item-label">E-mail</div>
+                                                <div class="item-title item-label" id="rmail">E-mail</div>
                                                 <div class="item-input-wrap">
                                                     <input type="email" placeholder="Ej: mlopez@gmail.com" />
                                                     <span class="input-clear-button"></span>
@@ -140,7 +140,8 @@
                         </div>
                         </ul>
                     </form>
-                    <div class="col"><a class="button button-fill convert-form-to-data" href="#">Registrarme</a></div>
+                    <div class="col"><a class="button button-fill convert-form-to-data" href="#"
+                            id="rok">Registrarme</a></div>
                 </div>
             </div>
         </div>
