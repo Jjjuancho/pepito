@@ -11,9 +11,9 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy"
+    <!--<meta http-equiv="Content-Security-Policy"
         content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-
+    -->
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport"
@@ -69,57 +69,19 @@
                     <div class="block">
                         <p>Page content goes here</p>
                         <!-- Link to another page -->
-                        <a href="/regform/" data-view=".page-content">Formulario</a>
-
+                        <a href="/regform/" data-view=".page-content">Registrarme</a>
+                        <br>
                         <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
-                        <p><a href="#" data-popup=".my-popup" class="popup-open">Open Popup</a></p>
-
-                        <!-- And somewhere in DOM -->
-                        <div class="popup my-popup">
-                            <div class="view">
-                                <div class="page">
-                                    <div class="navbar">
-                                        <div class="navbar-bg"></div>
-                                        <div class="navbar-inner">
-                                            <div class="title">Popup</div>
-                                            <div class="right">
-                                                <!-- Link to close popup -->
-                                                <a class="link popup-close">Close</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="page-content">
-                                        ...
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a href="/iniform/" data-view=".page-content">Iniciar sesión</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-        import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in
-                const user = userCredential.user;
-                // ...
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ..
-            });
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyDEfTIzApLEUeVhDV4r8DTGtYQR-EXkqCQ",
@@ -129,32 +91,8 @@
             messagingSenderId: "118487451220",
             appId: "1:118487451220:web:bd7599be5cdd7bd4d1cfc1"
         };
-
         // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                // Signed in
-                var user = userCredential.user;
-                // ...
-            })
-            .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ..
-            });
-
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                // Signed in
-                var user = userCredential.user;
-                // ...
-            })
-            .catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-            });
+        firebase.initializeApp(firebaseConfig);
     </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>

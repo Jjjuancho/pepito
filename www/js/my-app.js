@@ -34,19 +34,32 @@ $$(document).on('deviceready', function () {
   console.log("Device is ready!");
 });
 
-// Option 1. Using one 'page:init' handler for all pages
-$$(document).on('page:init', function (e) {
-  // Do something here when page loaded and initialized
-  $$('#rok').on('click', fnReg)
-  function fnLogin() {
-    user = $$('#rmail').val();
-    user = $$('#rpass').val();
-  }
-  console.log(e);
-})
 
-// Option 2. Using live 'page:init' event handlers for each page
-$$(document).on('page:init', '.page[data-name="about"]', function (e) {
-  // Do something here when page with data-name="about" attribute loaded and initialized
-  console.log(e);
+
+$$(document).on('page:init', '.page[data-name="regform"]', function (e) {
+
+  $$("#rok").on("click", function () {
+
+
+    var varmail = $$('#email').val()
+    var varpw = $$('#pw').val()
+
+
+    console.log(varmail)
+    console.log(varpw)
+
+    firebase.auth().createUserWithEmailAndPassword(varmail, varpw)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        console.log("ok")
+        // ...
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ..
+        console.error(errorMessage)
+      });
+  })
 })

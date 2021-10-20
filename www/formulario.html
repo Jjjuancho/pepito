@@ -58,9 +58,9 @@
                                                 <i class="icon demo-list-icon"></i>
                                             </div>
                                             <div class="item-inner">
-                                                <div class="item-title item-label" id="rpass">Contraseña</div>
+                                                <div class="item-title item-label">Contraseña</div>
                                                 <div class="item-input-wrap">
-                                                    <input type="password" placeholder="Ej: Hola123" />
+                                                    <input type="password" id="pw" placeholder="Ej: Hola123" />
                                                     <span class="input-clear-button"></span>
                                                 </div>
                                             </div>
@@ -72,9 +72,9 @@
                                                 <i class="icon demo-list-icon"></i>
                                             </div>
                                             <div class="item-inner">
-                                                <div class="item-title item-label" id="rmail">E-mail</div>
+                                                <div class="item-title item-label">E-mail</div>
                                                 <div class="item-input-wrap">
-                                                    <input type="email" placeholder="Ej: mlopez@gmail.com" />
+                                                    <input type="email" id="email" placeholder="Ej: mlopez@gmail.com" />
                                                     <span class="input-clear-button"></span>
                                                 </div>
                                             </div>
@@ -148,15 +148,3 @@
     </div>
 </div>
 </div>
-<script>
-    export default (props, { $, $on, $f7 }) => {
-        $on('pageInit', () => {
-            $('.convert-form-to-data').on('click', function () {
-                var formData = $f7.form.convertToData('#my-form');
-                alert(JSON.stringify(formData));
-            });
-        });
-
-        return $render;
-    }
-</script>
