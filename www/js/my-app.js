@@ -36,6 +36,13 @@ $$(document).on('deviceready', function () {
 
 
 
+
+var db = firebase.firestore();
+var colUsuarios = db.collection("Usuarios");
+
+var nombre, apellido, telefono;
+
+
 $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
 
   $$("#rok").on("click", function () {
@@ -51,6 +58,29 @@ $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
     firebase.auth().createUserWithEmailAndPassword(varmail, varpw)
       .then((userCredential) => {
         // Signed in
+
+        // ACA ESTA CREADO OK EL USUARIO EN AUTH
+
+        // VAMOS A GUARDAR SUS DATOS EN LA DB---> FIRESTORE
+        nombre = $$("#rNombre").val();
+        apellido = $$("#rApellido").val();
+        telefono = $$("#rTelefono").val();
+
+        var datos = {
+          nombre: nombre,
+          apellido: apellido,
+          telefono: telefono
+        }
+
+        colUsuarios.doc(varmail).set(datos)
+          .then(() => {
+            console.log("y la bd???");
+          })
+          .catch((error) => {
+
+          })
+
+
         var user = userCredential.user;
         console.log("ok")
         // ...
