@@ -11,9 +11,15 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
+<<<<<<< HEAD
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
 
+=======
+    <!--<meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    -->
+>>>>>>> 1c5e12a6c7649df6a310048030cc3dbb13ed0447
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport"
@@ -26,7 +32,11 @@
     <meta name="color-scheme" content="light dark">
 
     <!-- Your app title -->
+<<<<<<< HEAD
     <title>TinderWork</title>
+=======
+    <title>Maniadsaco</title>
+>>>>>>> 1c5e12a6c7649df6a310048030cc3dbb13ed0447
     <!-- Path to Framework7 Library CSS -->
     <link rel="stylesheet" href="lib/framework7/framework7-bundle.min.css">
     <!-- Path to icons -->
@@ -59,6 +69,7 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
             <!-- Pie de paina
             <div class="toolbar toolbar-bottom">
                 <div class="toolbar-inner">
@@ -67,6 +78,16 @@
                     <a href="#" class="link">Link 2</a>
                 </div>
             </div>-->
+=======
+            <!-- Toolbar -->
+            <div class="toolbar toolbar-bottom">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
+                </div>
+            </div>
+>>>>>>> 1c5e12a6c7649df6a310048030cc3dbb13ed0447
 
             <!-- Initial Page, "data-name" contains page name -->
             <div data-name="index" class="page">
@@ -106,6 +127,7 @@
 
                     <div class="block-title text-align-center">Sas?</div>
                     <div class="block">
+<<<<<<< HEAD
                         <div class="row">
                             <div class="col text-align-center">
                                 <div class="block-title text-align-center">BUSCADOR</div>
@@ -138,6 +160,14 @@
                                 </div>
                             </div>
                         </div>
+=======
+                        <p>Page content goes here</p>
+                        <!-- Link to another page -->
+                        <a href="/regform/" data-view=".page-content">Registrarme</a>
+                        <br>
+                        <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
+                        <a href="/iniform/" data-view=".page-content">Iniciar sesión</a>
+>>>>>>> 1c5e12a6c7649df6a310048030cc3dbb13ed0447
                     </div>
                 </div>
             </div>
@@ -148,8 +178,27 @@
 
     </div>
 
+<<<<<<< HEAD
 
 
+=======
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDEfTIzApLEUeVhDV4r8DTGtYQR-EXkqCQ",
+            authDomain: "tinderwork-e5060.firebaseapp.com",
+            projectId: "tinderwork-e5060",
+            storageBucket: "tinderwork-e5060.appspot.com",
+            messagingSenderId: "118487451220",
+            appId: "1:118487451220:web:bd7599be5cdd7bd4d1cfc1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+>>>>>>> 1c5e12a6c7649df6a310048030cc3dbb13ed0447
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/framework7-bundle.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>

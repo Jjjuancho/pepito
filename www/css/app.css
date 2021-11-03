@@ -1,4 +1,14 @@
 /* Your app custom styles here */
+#sal{
+  padding-left: 4%;
+}
+#pagina{
+  background-color: rgb(199, 223, 255);;
+}
+.row{
+  background-color: rgb(175, 210, 255);
+}
+
 /* poppins-regular - latin */
 @font-face {
   font-family: 'Poppins';
