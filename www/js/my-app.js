@@ -23,6 +23,10 @@ var app = new Framework7({
       path: '/regform/',
       url: 'formulario.html',
     },
+    {
+      path: '/regini/',
+      url: 'Iniciosesion.html',
+    },
   ]
   // ... other parameters
 });
@@ -93,3 +97,4 @@ $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
       });
   })
 })
+
