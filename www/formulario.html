@@ -58,9 +58,9 @@
                                                 <i class="icon demo-list-icon"></i>
                                             </div>
                                             <div class="item-inner">
-                                                <div class="item-title item-label">Contraseña</div>
+                                                <div class="item-title item-label">E-mail</div>
                                                 <div class="item-input-wrap">
-                                                    <input type="password" id="pw" placeholder="Ej: Hola123" />
+                                                    <input type="email" id="email" placeholder="Ej: mlopez@gmail.com" />
                                                     <span class="input-clear-button"></span>
                                                 </div>
                                             </div>
@@ -72,9 +72,9 @@
                                                 <i class="icon demo-list-icon"></i>
                                             </div>
                                             <div class="item-inner">
-                                                <div class="item-title item-label">E-mail</div>
+                                                <div class="item-title item-label">Contraseña</div>
                                                 <div class="item-input-wrap">
-                                                    <input type="email" id="email" placeholder="Ej: mlopez@gmail.com" />
+                                                    <input type="password" id="pw" placeholder="Ej: Hola123" />
                                                     <span class="input-clear-button"></span>
                                                 </div>
                                             </div>
@@ -105,7 +105,7 @@
                                             <div class="item-inner">
                                                 <div class="item-title item-label">Género</div>
                                                 <div class="item-input-wrap input-dropdown-wrap">
-                                                    <select placeholder="Please choose...">
+                                                    <select placeholder="Elegir género" id="rgen">
                                                         <option value="Masculino">Masculino</option>
                                                         <option value="Femenino">Femenino</option>
                                                     </select>
@@ -123,7 +123,8 @@
                                             <div class="item-inner">
                                                 <div class="item-title item-label">Fecha de nacimiento</div>
                                                 <div class="item-input-wrap">
-                                                    <input type="date" value="yyyy-MM-dd" placeholder="Elegir fecha" />
+                                                    <input type="date" value="yyyy-MM-dd" id="rfe"
+                                                        placeholder="Elegir fecha" />
                                                 </div>
                                             </div>
                                         </li>
@@ -136,7 +137,7 @@
                                             <div class="item-inner">
                                                 <div class="item-title item-label">Tipo de usuario</div>
                                                 <div class="item-input-wrap input-dropdown-wrap">
-                                                    <select placeholder="Please choose...">
+                                                    <select placeholder="Please choose..." id="rus">
                                                         <option value="Buscador de servicios">Buscador de servicios
                                                         </option>
                                                         <option value="Prestador de servicios">Prestador de servicios
@@ -146,6 +147,24 @@
                                             </div>
                                     </div>
                                     </li>
+                                </div>
+                                <div class="display-flex row">
+                                    <div class="col-lg">
+                                        <li class="item-content item-input">
+                                            <div class="item-media">
+                                                <i class="icon demo-list-icon"></i>
+                                            </div>
+                                            <div class="item-inner">
+                                                <div class="item-title item-label">Seleccione el rubro al que pertenece
+                                                </div>
+                                                <div class="item-input-wrap input-dropdown-wrap">
+                                                    <select placeholder="Elegir género" id="rgen">
+                                                        <option value="Masculino">Masculino</option>
+                                                        <option value="Femenino">Femenino</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                    </div>
                                 </div>
                         </div>
                         </ul>

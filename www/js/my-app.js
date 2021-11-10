@@ -27,6 +27,10 @@ var app = new Framework7({
       path: '/regini/',
       url: 'Iniciosesion.html',
     },
+    {
+      path: '/index/',
+      url: 'index.html',
+    },
   ]
   // ... other parameters
 });
@@ -44,7 +48,7 @@ $$(document).on('deviceready', function () {
 var db = firebase.firestore();
 var colUsuarios = db.collection("Usuarios");
 
-var nombre, apellido, telefono;
+var nombre, apellido, telefono, fechanacimiento, genero, tipousuario;
 
 
 $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
@@ -69,16 +73,22 @@ $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
         nombre = $$("#rNombre").val();
         apellido = $$("#rApellido").val();
         telefono = $$("#rTelefono").val();
+        fechanacimiento = $$("#rfe").val();
+        genero = $$("#rgen").val();
+        tipousuario = $$("#rus").val();
 
         var datos = {
           nombre: nombre,
           apellido: apellido,
-          telefono: telefono
+          telefono: telefono,
+          fechanacimiento: fechanacimiento,
+          genero: genero,
+          tipousuario: tipousuario
         }
 
         colUsuarios.doc(varmail).set(datos)
           .then(() => {
-            console.log("y la bd???");
+            console.log("datosok");
           })
           .catch((error) => {
 
@@ -98,3 +108,29 @@ $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
   })
 })
 
+
+$$(document).on('page:init', '.page[data-name="regini"]', function (e) {
+
+  $$("#rokk").on("click", function () {
+
+    var varmaili = $$('#emaili').val()
+    var varpwi = $$('#pwi').val()
+
+    console.log(varmaili)
+    console.log(varpwi)
+
+    firebase.auth().signInWithEmailAndPassword(varmaili, varpwi)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        // ...
+        console.log('ok')
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.error(errorMessage)
+      });
+
+  })
+})
