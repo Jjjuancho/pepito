@@ -12,6 +12,27 @@
   background-color: rgb(175, 210, 255);
 }
 
+.demo-swiper .swiper-slide {
+  font-size: 50px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #000;
+}
+
+.demo-swiper .swiper-slide {
+  box-sizing: border-box;
+  border: 2px solid #ddd;
+}
+
+.demo-swiper {
+  margin: 0px 0px 50px;
+  font-size: 18px;
+  height: 500px;
+}
+
 /* poppins-regular - latin */
 @font-face {
   font-family: 'Poppins';

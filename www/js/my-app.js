@@ -31,6 +31,14 @@ var app = new Framework7({
       path: '/index/',
       url: 'index.html',
     },
+    {
+      path: '/pbuscador/',
+      url: 'Paginabuscador.html',
+    },
+    {
+      path: '/pprestador/',
+      url: 'Paginaprestador.html',
+    },
   ]
   // ... other parameters
 });
@@ -52,6 +60,9 @@ var nombre, apellido, telefono, fechanacimiento, genero, tipousuario;
 
 
 $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
+
+  console.log($$('#rus').val());
+
 
   $$("#rok").on("click", function () {
 
@@ -76,6 +87,7 @@ $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
         fechanacimiento = $$("#rfe").val();
         genero = $$("#rgen").val();
         tipousuario = $$("#rus").val();
+        rubro = $$("#rubro").val();
 
         var datos = {
           nombre: nombre,
@@ -83,12 +95,14 @@ $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
           telefono: telefono,
           fechanacimiento: fechanacimiento,
           genero: genero,
-          tipousuario: tipousuario
+          tipousuario: tipousuario,
+          rubro: rubro
         }
 
         colUsuarios.doc(varmail).set(datos)
           .then(() => {
             console.log("datosok");
+            mainView.router.navigate('/regini/')
           })
           .catch((error) => {
 
@@ -104,10 +118,26 @@ $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
         var errorMessage = error.message;
         // ..
         console.error(errorMessage)
+
       });
   })
+
+  var bool = false;
+
+  $$('#rus').change(function () {
+    bool = !bool;
+
+    if (bool) {
+      $$('#mas').css('visibility', 'visible');
+    } else {
+      $$('#mas').css('visibility', 'hidden');
+    }
+  });
+
 })
 
+var db = firebase.firestore();
+var colUsuario = db.collection("Usuarios");
 
 $$(document).on('page:init', '.page[data-name="regini"]', function (e) {
 
@@ -119,12 +149,41 @@ $$(document).on('page:init', '.page[data-name="regini"]', function (e) {
     console.log(varmaili)
     console.log(varpwi)
 
+
     firebase.auth().signInWithEmailAndPassword(varmaili, varpwi)
       .then((userCredential) => {
         // Signed in
         var user = userCredential.user;
         // ...
         console.log('ok')
+
+        claveDeColeccion = varmaili;
+
+        var docRef = colUsuario.doc(claveDeColeccion);
+
+        docRef.get().then((doc) => {
+          if (doc.exists) {
+            console.log("Document data:", doc.data());
+
+            console.log(doc.id);
+            console.log(doc.data().nombre);
+            console.log(doc.data().tipousuario);
+
+            if (doc.data().tipousuario == "Buscador de servicios") {
+              mainView.router.navigate('/pbuscador/');
+            } else {
+              mainView.router.navigate('/pprestador/');
+            }
+
+
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+          }
+        }).catch((error) => {
+          console.log("Error getting document:", error);
+        });
+
       })
       .catch((error) => {
         var errorCode = error.code;

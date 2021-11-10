@@ -138,9 +138,11 @@
                                                 <div class="item-title item-label">Tipo de usuario</div>
                                                 <div class="item-input-wrap input-dropdown-wrap">
                                                     <select placeholder="Please choose..." id="rus">
-                                                        <option value="Buscador de servicios">Buscador de servicios
+                                                        <option value="Buscador de servicios" id="oculto">Buscador de
+                                                            servicios
                                                         </option>
-                                                        <option value="Prestador de servicios">Prestador de servicios
+                                                        <option value="Prestador de servicios" id="mostrar">Prestador de
+                                                            servicios
                                                         </option>
                                                     </select>
                                                 </div>
@@ -149,18 +151,22 @@
                                     </li>
                                 </div>
                                 <div class="display-flex row">
-                                    <div class="col-lg">
+                                    <div class="col-lg" id="mas" style="visibility: hidden">
                                         <li class="item-content item-input">
                                             <div class="item-media">
                                                 <i class="icon demo-list-icon"></i>
                                             </div>
                                             <div class="item-inner">
-                                                <div class="item-title item-label">Seleccione el rubro al que pertenece
+                                                <div class="item-title item-label ">Seleccione el rubro en el que se
+                                                    especializa
                                                 </div>
                                                 <div class="item-input-wrap input-dropdown-wrap">
-                                                    <select placeholder="Elegir género" id="rgen">
-                                                        <option value="Masculino">Masculino</option>
-                                                        <option value="Femenino">Femenino</option>
+                                                    <select placeholder="Elegir género" id="rubro">
+                                                        <option value=""></option>
+                                                        <option value="Electricista">Electricista</option>
+                                                        <option value="Gasista">Gasista</option>
+                                                        <option value="Plomero">Plomero</option>
+                                                        <option value="Carpintero">Carpintero</option>
                                                     </select>
                                                 </div>
                                             </div>
