@@ -136,6 +136,7 @@ $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
 
 })
 
+
 var db = firebase.firestore();
 var colUsuario = db.collection("Usuarios");
 
@@ -190,6 +191,34 @@ $$(document).on('page:init', '.page[data-name="regini"]', function (e) {
         var errorMessage = error.message;
         console.error(errorMessage)
       });
+
+  })
+})
+
+$$(document).on('page:init', '.page[data-name="pbuscador"]', function (e) {
+
+  $$("#nbini").css("display", "none");
+  $$("#nbreg").css("display", "none");
+  $$("#nbcer").css("display", "block");
+
+
+
+
+
+
+  $$("#nbcer").on("click", function () {
+    firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      mainView.router.navigate('/index/');
+      console.log("sesión cerrada");
+      $$("#nbini").css("display", "block");
+      $$("#nbreg").css("display", "block");
+      $$("#nbcer").css("display", "none");
+
+    }).catch((error) => {
+      // An error happened.
+    });
+
 
   })
 })
