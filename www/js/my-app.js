@@ -162,6 +162,12 @@ $$(document).on('page:init', '.page[data-name="regini"]', function (e) {
 
         var docRef = colUsuario.doc(claveDeColeccion);
 
+        let hola;
+
+
+
+        console.log(hola);
+
         docRef.get().then((doc) => {
           if (doc.exists) {
             console.log("Document data:", doc.data());
@@ -204,6 +210,34 @@ $$(document).on('page:init', '.page[data-name="pbuscador"]', function (e) {
 
 
 
+  var t = "";
+  colUsuario.where('tipousuario', '==', 'Prestador de servicios').get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        elId = doc.id;
+        elNombre = doc.data().nombre;
+
+        console.log(elNombre)
+
+
+        t += `<div class="card">
+  <div class="card-header">`+ doc.data().nombre + ` ` + doc.data().nombre + `</div>
+  <div class="card-content card-content-padding">Card with header and footer. Card headers are used to display
+    card titles and footers for additional information or just for custom actions.</div>
+  <div class="card-footer">Card Footer</div>
+</div>`;
+
+
+      });
+
+      $$("#contResultados").html(t);
+
+    })
+    .catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
+
 
 
   $$("#nbcer").on("click", function () {
@@ -218,6 +252,8 @@ $$(document).on('page:init', '.page[data-name="pbuscador"]', function (e) {
     }).catch((error) => {
       // An error happened.
     });
+
+
 
 
   })
