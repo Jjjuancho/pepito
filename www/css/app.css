@@ -70,6 +70,18 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
   background-color: rgb(175, 210, 255);
 }
 
+.cj{
+  padding: 0px 10px 0px 10px;
+  background-color: rgb(199, 223, 255);
+  }
+  
+.is{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgb(199, 223, 255);
+}
+
 .demo-swiper .swiper-slide {
   font-size: 50px;
   font-weight: 300;
