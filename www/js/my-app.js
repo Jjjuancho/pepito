@@ -1,4 +1,3 @@
-
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
 
@@ -179,12 +178,6 @@ $$(document).on('page:init', '.page[data-name="regini"]', function (e) {
 
         var docRef = colUsuario.doc(claveDeColeccion);
 
-        let hola;
-
-
-
-        console.log(hola);
-
         docRef.get().then((doc) => {
           if (doc.exists) {
             console.log("Document data:", doc.data());
@@ -238,14 +231,6 @@ $$(document).on('page:init', '.page[data-name="pbuscador"]', function (e) {
         console.log(elNombre)
 
 
-        t += `<div class="card">
-  <div class="card-header">`+ doc.data().nombre + ` ` + doc.data().apellido + `</div>
-  <div class="card-content card-content-padding">Card with header and footer. Card headers are used to display
-    card titles and footers for additional information or just for custom actions.</div>
-  <div class="card-footer">`+ doc.data().rubro + `</div>
-</div> `;
-
-
       });
 
       $$("#contResultados").html(t);
@@ -270,4 +255,44 @@ $$(document).on('page:init', '.page[data-name="pbuscador"]', function (e) {
       // An error happened.
     });
   })
+
+
+  var rubros = $$('#rubros').val()
+
+
+
+  colUsuario.where('tipousuario', '==', 'Prestador de servicios' && 'Rubro', '==', 'Carpintero')
+    .get()
+    .then((querySnapshot) => {
+      console.log("carpinteros: ");
+      querySnapshot.forEach((doc) => {
+        console.log(doc.data().nombre);
+      })
+    })
+
+  if (sd == "Carpintero") {
+    t += `<div class="card">
+    <div class="card-header">`+ doc.data().nombre + ` ` + doc.data().apellido + `</div>
+    <div class="card-content card-content-padding">Card with header and footer. Card headers are used to display
+      card titles and footers for additional information or just for custom actions.</div>
+    <div class="card-footer">`+ doc.data().rubro + `</div>
+  </div> `;
+  } else if (rubros == plo) {
+
+  } else if (rubros == car) {
+
+  } else if (rubros == ele) {
+
+  } else {
+    t += `<div class="card">
+    <div class="card-header">`+ doc.data().nombre + ` ` + doc.data().apellido + `</div>
+    <div class="card-content card-content-padding">Card with header and footer. Card headers are used to display
+      card titles and footers for additional information or just for custom actions.</div>
+    <div class="card-footer">`+ doc.data().rubro + `</div>
+  </div> `;
+  }
+
+
+
 })
+
