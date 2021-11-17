@@ -48,6 +48,8 @@ var mainView = app.views.create('.view-main');
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function () {
   console.log("Device is ready!");
+
+  $$('#casa').click();
 });
 
 
@@ -57,6 +59,21 @@ var db = firebase.firestore();
 var colUsuarios = db.collection("Usuarios");
 
 var nombre, apellido, telefono, fechanacimiento, genero, tipousuario;
+
+var recargo = 0
+
+// $$(document).on('page:init', '.page[data-name="index"]', function (e) {
+//   console.log("juanjuanjuanjuanjuanjuanjuanjuanjuanjuanjuanjuanjuanjuanjuanjuanjuanjuan");
+
+//   if (recargo == 0) {
+//     recargo = 1
+//     $$("#casa").click()
+//   }
+
+
+
+//   //mainView.router.navigate(/index/);
+// });
 
 
 $$(document).on('page:init', '.page[data-name="regform"]', function (e) {
@@ -222,11 +239,11 @@ $$(document).on('page:init', '.page[data-name="pbuscador"]', function (e) {
 
 
         t += `<div class="card">
-  <div class="card-header">`+ doc.data().nombre + ` ` + doc.data().nombre + `</div>
+  <div class="card-header">`+ doc.data().nombre + ` ` + doc.data().apellido + `</div>
   <div class="card-content card-content-padding">Card with header and footer. Card headers are used to display
     card titles and footers for additional information or just for custom actions.</div>
-  <div class="card-footer">Card Footer</div>
-</div>`;
+  <div class="card-footer">`+ doc.data().rubro + `</div>
+</div> `;
 
 
       });
@@ -252,9 +269,5 @@ $$(document).on('page:init', '.page[data-name="pbuscador"]', function (e) {
     }).catch((error) => {
       // An error happened.
     });
-
-
-
-
   })
 })
