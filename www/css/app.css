@@ -176,4 +176,12 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
 	font-family: 'Poppins', Arial, sans-serif;
 }
 
+#tindnavbar {
+  margin-left: 5px;
+}
 
+#botonini, #botonreg {
+  padding-top: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
