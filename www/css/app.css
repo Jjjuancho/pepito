@@ -61,26 +61,45 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
   padding-left: 4%;
 }
 #pagina{
-  background-color: rgb(199, 223, 255);;
+  background-color: #F1F1F1;
+  padding: 15px 5px 15px 5px;
+
 }
 .row{
-  background-color: rgb(175, 210, 255);
+  background-color: #F1F1F1;
 }
 .sas{
   background-color: rgb(175, 210, 255);
 }
 
+/*Parte Thiago*/
+
 .cj{
   padding: 0px 10px 0px 10px;
-  background-color: rgb(199, 223, 255);
+  background-color: #F1F1F1;
   }
   
 .is{
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background-color: rgb(199, 223, 255);
+  background-color: #F1F1F1;
 }
+
+.es{
+  background: white;
+  padding: 8px 16px 8px 8px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #D0D0D0;
+}
+
+.bo {
+  background: #D0D0D0;
+  color: black;
+}
+
+/*Parte Thiago*/
 
 .demo-swiper .swiper-slide {
   font-size: 50px;
